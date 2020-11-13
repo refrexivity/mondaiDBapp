@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>aggregate</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-left">
+          浜島ロゴ
+        </div>
+        <div class="header-right">
+          メニュー
+        </div>
+      </div>
+    </header>
+    <div class="top-wrapper">
+      <div class="choice">
+        <table　border="1">
+          <tr>
+            <th>回数</th>
+            <th>表／裏</th>
+          </tr>
+          <form class="" action="/view" method="post">
+            <tr>
+              <th>
+                <select class="question-times" name="times">
+                  <% for (let i =1; i <=18; i++) { %>
+                    <option value=<%= i %>><%= `${i}回` %></option>
+                  <% } %>
+                </select>
+              </th>
+              <th>
+                <select class="question-heads or tails" name="direction">
+                  <option value=0>表</option>
+                  <option value=1>裏</option>
+                </select>
+              </th>
+            </tr>
+          </form>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
