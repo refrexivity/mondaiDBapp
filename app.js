@@ -7,7 +7,7 @@ app.use(express.urlencoded({extended:false}));//jsでHTMLのフォームの値�
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: '*PhoLinG29',
+  password: 'password',
   database: 'databaseapp'
 });
 
