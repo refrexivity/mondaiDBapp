@@ -22,7 +22,7 @@
             <th>回数</th>
             <th>表／裏</th>
           </tr>
-          <form class="" action="/view" method="post">
+          <form class="" action="/show" method="post">
             <tr>
               <th>
                 <select class="question-times" name="times">
@@ -38,9 +38,19 @@
                 </select>
               </th>
             </tr>
+            <input type="submit" name="" value="表示">
           </form>
         </table>
       </div>
+    </div>
+    <div class="show-wrapper">
+      <% if (typeof printdata !== "undefined") {
+        printdata.forEach((data) => { %>
+          <p><%= data.id %></P>
+          <P><%= data.name %></p>
+          <p><%= data.maintext %></p>
+        <% });
+      } %>
     </div>
   </body>
 </html>
