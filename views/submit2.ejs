@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>aggregate</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-left">
+          浜島ロゴ????
+
+        </div>
+        <div class="header-right">
+          メニュー
+        </div>
+      </div>
+    </header>
+    <div class="top-wrapper">
+      <div class="choice">
+        <table　border="1">
+          <tr>
+            <th>回数</th>
+            <th>表／裏</th>
+          </tr>
+          <% mondaidb.forEach((mondai) => { %>
+              <p><%= mondai.name %></p>
+              <p><%= mondai.bigname %></p>
+              <p><%= mondai.name %></p>
+              <p><%= mondai.mainText %></p>
+              <p>＊＊＊＊＊</p>
+            <% }); %>
+    </div>
+  </body>
+</html>
