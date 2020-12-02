@@ -44,11 +44,15 @@
       </div>
     </div>
     <div class="show-wrapper">
+
       <% if (typeof printdata !== "undefined") {
         printdata.forEach((data) => { %>
           <p><%= data.id %></P>
           <P><%= data.name %></p>
           <p><%= data.maintext %></p>
+          <form class="" action="/show2/<%= data.midcode %>" method="post">
+            <input type="submit" name="" value="類題を表示">
+          </form>
         <% });
       } %>
     </div>
