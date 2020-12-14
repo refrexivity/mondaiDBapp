@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>aggregate</title>
+    <link rel="stylesheet" href="/css/style_submit.min.css" type="text/css">
   </head>
   <body>
     <header>
@@ -22,22 +23,44 @@
             <th>回数</th>
             <th>表／裏</th>
           </tr>
-          <tr>
-            <th>
-              <select class="question-times" name="times">
-                <option value="1">1回</option>
-                <option value="2">2回</option>
-              </select>
-            </th>
-            <th>
-              <select class="question-heads or tails" name="direction">
-                <option value="heads">表</option>
-                <option value="tails">裏</option>
-              </select>
-            </th>
-          </tr>
+          <form class="" action="/show" method="post">
+            <tr>
+              <th>
+                <select class="question-times" name="times">
+                  <% for (let i =1; i <=18; i++) { %>
+                    <option value=<%= i %>><%= `${i}回` %></option>
+                  <% } %>
+                </select>
+              </th>
+              <th>
+                <select class="question-heads or tails" name="direction">
+                  <option value=0>表</option>
+                  <option value=1>裏</option>
+                </select>
+              </th>
+            </tr>
+            <input type="submit" name="" value="表示">
+          </form>
         </table>
       </div>
     </div>
+    <div class="show-wrapper">
+
+      <% if (typeof printdata !== "undefined") {
+        printdata.forEach((data) => { %>
+          <p class="id"><%= data.id %></P>
+          <P class="name"><%= data.name %></p>
+          <p class="text"><%= data.maintext %></p>
+          <form class="" action="/show2/<%= data.midcode %>" method="post">
+            <input class="show2-btn" type="submit" name="" value="類題を表示">
+          </form>
+        <% });
+      } %>
+    </div>
+    <footer>
+      <div class="container">
+        浜島書店ロゴ
+      </div>
+    </footer>
   </body>
 </html>
